@@ -2,6 +2,9 @@ plugins {
     id 'java'
 }
 
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -18,3 +21,12 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation 'junit:junit:4.13'
 }
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+
+check.dependsOn jacocoTestReport
