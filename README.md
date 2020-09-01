@@ -1,11 +1,7 @@
-# playground [![Build Status](https://travis-ci.org/rflpazini/playground-java.svg?branch=master)](https://travis-ci.org/rflpazini/playground-java)
+![PlayGround image from coney island](https://i.imgur.com/6tgPsty.png)
+
+# Playground 
+
+![Build](https://github.com/rflpazini/playground-java/workflows/Build/badge.svg)
 
 This repository holds the source for my personal Java playground
-
-## Libs included here
-
-* guava
-* hamcrest
-* junit
-
-
