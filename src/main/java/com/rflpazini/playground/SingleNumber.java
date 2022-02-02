@@ -1,4 +1,4 @@
-package main.java.com.rflpazini.playground;
+package com.rflpazini.playground;
 
 public class SingleNumber {
 

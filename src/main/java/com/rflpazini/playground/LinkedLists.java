@@ -1,4 +1,6 @@
-package main.java.com.rflpazini.playground;
+package com.rflpazini.playground;
+
+import java.util.Stack;
 
 public class LinkedLists {
 
@@ -10,7 +12,7 @@ public class LinkedLists {
       slow = slow.next;
       fast = fast.next.next;
     }
-
+    
     System.out.println(slow.val);
 
     return slow;

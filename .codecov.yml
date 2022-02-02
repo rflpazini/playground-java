@@ -6,7 +6,7 @@ codecov:
 
 coverage:
   status:
-    patch: # minimum coverage needed based only on the new code introduced on the PR
+    patch: # minimum coverage needed to be based only on the new code introduced on the PR
       default: off
       pr_coverage:
         target: 90%
