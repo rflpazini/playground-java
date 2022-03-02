@@ -1,8 +1,7 @@
-package test.java.com.rflpazini.playground;
+package com.rflpazini.playground;
 
 import static org.junit.Assert.assertEquals;
 
-import main.java.com.rflpazini.playground.SingleNumber;
 import org.junit.Test;
 
 public class SingleNumberTest {

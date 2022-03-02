@@ -1,4 +1,4 @@
-package test.java.com.rflpazini.playground;
+package com.rflpazini.playground;
 
 import main.java.com.rflpazini.playground.HashSets;
 import org.junit.Assert;

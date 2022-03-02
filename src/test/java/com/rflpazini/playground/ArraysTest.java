@@ -1,6 +1,5 @@
-package test.java.com.rflpazini.playground;
+package com.rflpazini.playground;
 
-import main.java.com.rflpazini.playground.Arrays;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,6 +25,21 @@ public class ArraysTest {
 
     // then
     Assert.assertEquals(polePosition, actual[0]);
-
   }
+
+  @Test
+  public void shouldCheckSum_ofTwoNumbers() {
+    // given
+    int[] nums = {2,7,11,15};
+    int sum = 9;
+
+    // when
+    int[] actual = target.twoSum(nums, sum);
+
+    // then
+    int[] expected = {0,1};
+    Assert.assertArrayEquals(expected, actual);
+  }
+
+
 }

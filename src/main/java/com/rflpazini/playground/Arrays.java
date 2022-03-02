@@ -1,6 +1,8 @@
-package main.java.com.rflpazini.playground;
+package com.rflpazini.playground;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public class Arrays {
@@ -19,6 +21,20 @@ public class Arrays {
 
 
     return newRacingGrid;
+  }
+
+  public int[] twoSum(int[] nums, int target) {
+    Map<Integer, Integer> map = new HashMap<>();
+
+    for (int i = 0; i < nums.length; i++) {
+      int complement = target - nums[i];
+      if(map.containsKey(complement)) {
+        return new int[] { map.get(complement), i};
+      }
+      map.put(nums[i], i);
+    }
+
+    return null;
   }
 
 }

@@ -1,7 +1,5 @@
-package test.java.com.rflpazini.playground;
+package com.rflpazini.playground;
 
-import main.java.com.rflpazini.playground.LinkedLists;
-import main.java.com.rflpazini.playground.ListNode;
 import org.junit.Test;
 
 public class LinkedListTest {

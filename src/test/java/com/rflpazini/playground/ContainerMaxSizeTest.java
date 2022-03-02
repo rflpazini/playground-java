@@ -1,6 +1,5 @@
-package test.java.com.rflpazini.playground;
+package com.rflpazini.playground;
 
-import main.java.com.rflpazini.playground.ContainerMaxSize;
 import org.junit.Assert;
 import org.junit.Test;
 
