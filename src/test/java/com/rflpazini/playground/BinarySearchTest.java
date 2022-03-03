@@ -1,9 +1,9 @@
 package com.rflpazini.playground;
 
+import com.rflpazini.playground.utils.Fixtures;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import test.java.com.rflpazini.playground.utils.Fixtures;
 
 public class BinarySearchTest {
 
@@ -29,10 +29,10 @@ public class BinarySearchTest {
   @Test
   public void shouldFindTheCorrectNumber_withDoubleSizedArray() {
     // given
-    int[] elemensts = Fixtures.SORTED_ARRAY_WITH_560_ELEMENTS;
+    int[] elements = Fixtures.SORTED_ARRAY_WITH_560_ELEMENTS;
 
     // then
-    int actual = target.searchFor(2822, elemensts);
+    int actual = target.searchFor(2822, elements);
 
     // when
     Assert.assertEquals(182, actual);
@@ -41,12 +41,26 @@ public class BinarySearchTest {
   @Test
   public void shouldNotFindTheNumberAndReturnZero() {
     // given
-    int[] elemensts = Fixtures.SORTED_ARRAY_WITH_280_ELEMENTS;
+    int[] elements = Fixtures.SORTED_ARRAY_WITH_280_ELEMENTS;
+
 
     // then
-    int actual = target.searchFor(1, elemensts);
+    int actual = target.searchFor(1, elements);
 
     // when
     Assert.assertEquals(0, actual);
+  }
+
+  @Test
+  public void shouldReturnIndexOfSearch() {
+    // given
+    int[] elements = Fixtures.SORTED_ARRAY_WITH_280_ELEMENTS;
+    int targetNumber = 296;
+
+    // then
+    int actual = target.indexOfSearch(elements, targetNumber);
+
+    // when
+    Assert.assertEquals(9, actual);
   }
 }

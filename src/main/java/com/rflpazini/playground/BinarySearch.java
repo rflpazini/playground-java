@@ -10,7 +10,7 @@ public class BinarySearch {
     while (low <= high) {
       steps++;
 
-      int middle = (low + high) / 2;
+      int middle = low + (high - low) / 2;
       int guess = in[middle];
 
       if (guess == number) {
@@ -27,5 +27,27 @@ public class BinarySearch {
 
     System.out.println("Steps taken: " + steps);
     return 0;
+  }
+
+  public int indexOfSearch(final int nums[], final int target) {
+    int left = 0;
+    int pivot = 0;
+    int right = nums.length - 1;
+
+    while (left <= right) {
+      pivot = left + (right - left) / 2;
+
+      if (nums[pivot] == target) {
+        return pivot;
+      }
+
+      if (target < nums[pivot]) {
+        right = pivot - 1;
+      } else {
+        left = pivot + 1;
+      }
+    }
+
+    return -1;
   }
 }

@@ -1,4 +1,4 @@
-package test.java.com.rflpazini.playground.utils;
+package com.rflpazini.playground.utils;
 
 public class Fixtures {
 

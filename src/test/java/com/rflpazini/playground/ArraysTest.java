@@ -3,7 +3,7 @@ package com.rflpazini.playground;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import test.java.com.rflpazini.playground.utils.Fixtures;
+import com.rflpazini.playground.utils.Fixtures;
 import java.util.List;
 
 public class ArraysTest {
