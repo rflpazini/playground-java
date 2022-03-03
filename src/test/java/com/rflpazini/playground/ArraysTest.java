@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import test.java.com.rflpazini.playground.utils.Fixtures;
+import java.util.List;
 
 public class ArraysTest {
 
@@ -37,9 +38,40 @@ public class ArraysTest {
     int[] actual = target.twoSum(nums, sum);
 
     // then
-    int[] expected = {0,1};
+    int[] expected = {1,2};
     Assert.assertArrayEquals(expected, actual);
   }
 
+  @Test
+  public void shouldCheckSum_ofTwoNumbers_withoutSort() {
+    // given
+    int[] nums = {3,2,4};
+    int sum = 6;
+
+    // when
+    int[] actual = target.twoSum(nums, sum);
+
+    // then
+    int[] expected = {1,2};
+    Assert.assertArrayEquals(expected, actual);
+  }
+
+  @Test
+  public void shouldSumThree() {
+    // given
+    int[] nums = {-1,0,1,2,-1,-4};
+    int sum = 6;
+
+    // when
+    List<List<Integer>> actual = target.threeSum(nums);
+
+    // then
+    List<List<Integer>> expected = List.of(
+        List.of(-1,-1,2),
+        List.of(-1,0,1)
+    );
+
+    Assert.assertEquals(expected, actual);
+  }
 
 }
