@@ -38,7 +38,7 @@ public class ArraysTest {
     int[] actual = target.twoSum(nums, sum);
 
     // then
-    int[] expected = {1,2};
+    int[] expected = {0,1};
     Assert.assertArrayEquals(expected, actual);
   }
 
@@ -67,8 +67,8 @@ public class ArraysTest {
 
     // then
     List<List<Integer>> expected = List.of(
-        List.of(-1,-1,2),
-        List.of(-1,0,1)
+        List.of(-1,1,0),
+        List.of(-1,2,-1)
     );
 
     Assert.assertEquals(expected, actual);
