@@ -1,6 +1,5 @@
 package com.rflpazini.playground;
 
-import main.java.com.rflpazini.playground.HashSets;
 import org.junit.Assert;
 import org.junit.Test;
 

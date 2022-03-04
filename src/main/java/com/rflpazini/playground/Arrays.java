@@ -20,8 +20,6 @@ public class Arrays {
       newRacingGrid[i + 1] = racingGrid[i];
     }
 
-
-
     return newRacingGrid;
   }
 
@@ -29,8 +27,8 @@ public class Arrays {
     Map<Integer, Integer> map = new HashMap<>();
     for (int i = 0; i < nums.length; ++i) {
       int complement = target - nums[i];
-      if(map.containsKey(complement)) {
-        return new int[] { map.get(complement), i};
+      if (map.containsKey(complement)) {
+        return new int[]{map.get(complement), i};
       }
       map.put(nums[i], i);
     }
@@ -42,8 +40,8 @@ public class Arrays {
     java.util.Arrays.sort(nums);
     List<List<Integer>> resp = new ArrayList<>();
 
-    for (int i = 0; i< nums.length && nums[i] <= 0; ++i) {
-      if(i == 0 || nums[i - 1] != nums[i]) {
+    for (int i = 0; i < nums.length && nums[i] <= 0; ++i) {
+      if (i == 0 || nums[i - 1] != nums[i]) {
         twoSumII(nums, i, resp);
       }
     }
@@ -51,14 +49,14 @@ public class Arrays {
     return resp;
   }
 
-  void twoSumII(int[] nums, int i, List<List<Integer>> resp){
+  void twoSumII(int[] nums, int i, List<List<Integer>> resp) {
     var group = new HashSet<Integer>();
 
-    for (int j = i+1; j < nums.length; ++j) {
+    for (int j = i + 1; j < nums.length; ++j) {
       int complement = -nums[i] - nums[j];
-      if(group.contains(complement)) {
+      if (group.contains(complement)) {
         resp.add(java.util.Arrays.asList(nums[i], nums[j], complement));
-        while (j + 1 < nums.length && nums[j] == nums[j +1]) {
+        while (j + 1 < nums.length && nums[j] == nums[j + 1]) {
           ++j;
         }
       }
@@ -66,4 +64,25 @@ public class Arrays {
     }
   }
 
+  public int[] rotate(int[] num, int k) {
+    int numLength = num.length - 1;
+    int pivot = numLength - k;
+
+    rotationHelper(0, pivot, num);
+    rotationHelper(pivot + 1, numLength, num);
+
+    rotationHelper(0, numLength, num);
+
+    return num;
+  }
+
+  private void rotationHelper(int start, int end, int[] nums) {
+    while (start < end) {
+      int temp = nums[start];
+      nums[start] = nums[end];
+      nums[end] = temp;
+      start++;
+      end--;
+    }
+  }
 }
