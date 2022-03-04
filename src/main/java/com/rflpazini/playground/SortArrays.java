@@ -2,6 +2,7 @@ package com.rflpazini.playground;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.Arrays;
 
 public class SortArrays {
 
@@ -28,7 +29,7 @@ public class SortArrays {
 
     Instant end = Instant.now();
     Duration timeElapsed = Duration.between(start, end);
-    System.out.println(timeElapsed);
+    System.out.println("O(N): "+timeElapsed);
     return squares;
   }
 
@@ -53,7 +54,7 @@ public class SortArrays {
 
     Instant end = Instant.now();
     Duration timeElapsed = Duration.between(start, end);
-    System.out.println(timeElapsed);
+    System.out.println("O(n2): "+timeElapsed);
     return nums;
   }
 }

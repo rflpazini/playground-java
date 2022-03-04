@@ -1,7 +1,6 @@
-package main.java.com.rflpazini.playground;
+package com.rflpazini.playground;
 
 public class MoveZeros {
-
   public void execute(int[] nums) {
     int count = 0;
     int n = nums.length;
