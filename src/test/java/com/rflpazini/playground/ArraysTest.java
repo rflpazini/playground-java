@@ -31,35 +31,35 @@ public class ArraysTest {
   @Test
   public void shouldCheckSum_ofTwoNumbers() {
     // given
-    int[] nums = {2,7,11,15};
+    int[] nums = {2, 7, 11, 15};
     int sum = 9;
 
     // when
     int[] actual = target.twoSum(nums, sum);
 
     // then
-    int[] expected = {0,1};
+    int[] expected = {0, 1};
     Assert.assertArrayEquals(expected, actual);
   }
 
   @Test
   public void shouldCheckSum_ofTwoNumbers_withoutSort() {
     // given
-    int[] nums = {3,2,4};
+    int[] nums = {3, 2, 4};
     int sum = 6;
 
     // when
     int[] actual = target.twoSum(nums, sum);
 
     // then
-    int[] expected = {1,2};
+    int[] expected = {1, 2};
     Assert.assertArrayEquals(expected, actual);
   }
 
   @Test
   public void shouldSumThree() {
     // given
-    int[] nums = {-1,0,1,2,-1,-4};
+    int[] nums = {-1, 0, 1, 2, -1, -4};
     int sum = 6;
 
     // when
@@ -67,8 +67,8 @@ public class ArraysTest {
 
     // then
     List<List<Integer>> expected = List.of(
-        List.of(-1,1,0),
-        List.of(-1,2,-1)
+        List.of(-1, 1, 0),
+        List.of(-1, 2, -1)
     );
 
     Assert.assertEquals(expected, actual);
