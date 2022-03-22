@@ -15,20 +15,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-      
-    - name: Set up JDK 17
-      uses: actions/setup-java@v1
-      with:
-        java-version: 17
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-      
-    - name: Build with Gradle
-      run: ./gradlew build
-      
-    - name: Codecov
-      uses: codecov/codecov-action@v1.0.13
-      with:
-        token: 2faef5e6-0a42-4eb3-bddc-47673dbddc8d
+      - name: Setup JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Codecov
+        uses: codecov/codecov-action@v2.1.0
+        with:
+          token: 2faef5e6-0a42-4eb3-bddc-47673dbddc8d
