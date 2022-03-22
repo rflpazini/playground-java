@@ -1,19 +1,23 @@
 package com.rflpazini.playground;
 
 public class MoveZeros {
-  public void execute(int[] nums) {
+
+  // O(N) time and space
+  public int[] execute(int[] nums) {
     int count = 0;
     int n = nums.length;
+    int[] moved = new int[n];
 
     for (int i = 0; i < n; i++) {
       if (nums[i] != 0) {
-        nums[count++] = nums[i];
+        moved[count++] = nums[i];
       }
     }
 
     while (count < n) {
-      nums[count++] = 0;
+      moved[count++] = 0;
     }
 
+    return moved;
   }
 }
