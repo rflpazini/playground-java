@@ -50,4 +50,43 @@ public class StringsTest {
     assertFalse(target.isUniqueChar(first));
   }
 
+  @Test
+  public void shouldValidateIfContainsSubstring() {
+    // given
+    String principal = "ahbgdc";
+    String sub = "abc";
+
+    // when
+    boolean actual = target.isSubsequence(sub, principal);
+
+    // then
+    assertTrue(actual);
+  }
+
+  @Test
+  public void shouldValidateIfNotContainsSubstring() {
+    // given
+    String principal = "ahbgdc";
+    String sub = "axc";
+
+    // when
+    boolean actual = target.isSubsequence(sub, principal);
+
+    // then
+    assertFalse(actual);
+  }
+
+  @Test
+  public void shouldValidateIfSubstringIsGreaterThanTarget() {
+    // given
+    String principal = "ahbgdc";
+    String sub = "axcasdasd";
+
+    // when
+    boolean actual = target.isSubsequence(sub, principal);
+
+    // then
+    assertFalse(actual);
+  }
+
 }
