@@ -10,12 +10,10 @@ public class LinkedList<T> {
 
   public void add(T value) {
     ListNode node = new ListNode(value, null);
-    if (this.head == null) {
-      this.head = node;
-    } else {
+    if (this.head != null) {
       node.next = head;
-      this.head = node;
     }
+    this.head = node;
   }
 
   public int size() {

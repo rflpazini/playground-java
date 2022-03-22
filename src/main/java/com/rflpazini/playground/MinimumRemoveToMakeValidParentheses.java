@@ -2,12 +2,7 @@ package com.rflpazini.playground;
 
 public class MinimumRemoveToMakeValidParentheses {
 
-  public static void main(String[] args) {
-    minRemoveToMakeValid("lee(t(c)o)de)"); // lee(t(c)o)de
-    minRemoveToMakeValid("))(("); // ""
-  }
-
-  public static String minRemoveToMakeValid(String s) {
+  public String minRemoveToMakeValid(String s) {
     int count = 0;
     StringBuilder sb = new StringBuilder();
 
