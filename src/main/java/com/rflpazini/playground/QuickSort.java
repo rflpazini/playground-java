@@ -1,17 +1,12 @@
 package com.rflpazini.playground;
 
-import static java.lang.System.out;
-
-import java.util.Arrays;
-import java.util.Random;
-
 public class QuickSort {
 
   private static int[] sortedArray;
 
   private QuickSort(final int[] array) {
-    this.sortedArray = array;
-    initSort(this.sortedArray);
+    sortedArray = array;
+    initSort(sortedArray);
   }
 
   public static int[] getSortedArray() {
@@ -22,28 +17,9 @@ public class QuickSort {
     return new QuickSort(array);
   }
 
-  public static void main(String[] args) {
-    final int[] array = generateRandomArray(10);
-    out.println("Unsorted: " + Arrays.toString(array));
-
-    QuickSort sortedArray = QuickSort.doSortOf(array);
-    out.println("Sorted:   " + Arrays.toString(sortedArray.getSortedArray()));
-  }
-
-  public static int[] generateRandomArray(final int arraySize) {
-    int[] newStuff = new int[arraySize];
-
-    for (int i = 0; i < arraySize; i++) {
-      newStuff[i] = (new Random().nextInt() * arraySize) + 10;
-    }
-
-    return newStuff;
-  }
-
-  private int[] initSort(int[] arrayToSort) {
+  private void initSort(int[] arrayToSort) {
     doQuickSort(0, arrayToSort.length - 1);
 
-    return new int[1];
   }
 
   private void doQuickSort(int left, int right) {
@@ -51,7 +27,7 @@ public class QuickSort {
       return;
     }
 
-    int pivot = this.sortedArray[right];
+    int pivot = sortedArray[right];
     int location = partitionArray(left, right, pivot);
 
     doQuickSort(left, location - 1);
@@ -63,9 +39,11 @@ public class QuickSort {
     int rightPointer = right;
 
     while (true) {
-      while (this.sortedArray[++leftPointer] < pivot) {;
+      while (sortedArray[++leftPointer] < pivot) {
+        ;
       }
-      while (rightPointer > 0 && this.sortedArray[--rightPointer] > pivot) {;
+      while (rightPointer > 0 && sortedArray[--rightPointer] > pivot) {
+        ;
       }
       if (leftPointer >= rightPointer) {
 
@@ -81,16 +59,9 @@ public class QuickSort {
     return leftPointer;
   }
 
-  private int partitionArray2(final int low, final int right) {
-    int pivot = sortedArray[low];
-    int i = low;
-
-    return 0;
-  }
-
   private void swapValues(int firstIndex, int secondIndex) {
-    int savedValue = this.sortedArray[firstIndex];
-    this.sortedArray[firstIndex] = this.sortedArray[secondIndex];
-    this.sortedArray[secondIndex] = savedValue;
+    int savedValue = sortedArray[firstIndex];
+    sortedArray[firstIndex] = sortedArray[secondIndex];
+    sortedArray[secondIndex] = savedValue;
   }
 }
