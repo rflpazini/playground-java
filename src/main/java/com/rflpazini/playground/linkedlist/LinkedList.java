@@ -27,12 +27,4 @@ public class LinkedList<T> {
 
     return count;
   }
-
-  public void print() {
-    ListNode node = this.head;
-    while (node != null) {
-      System.out.print(node.val + "->");
-      node = node.next;
-    }
-  }
 }
