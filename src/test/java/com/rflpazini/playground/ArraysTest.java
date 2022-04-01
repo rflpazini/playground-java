@@ -1,6 +1,9 @@
 package com.rflpazini.playground;
 
-import org.junit.Assert;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
+
 import org.junit.Before;
 import org.junit.Test;
 import com.rflpazini.playground.utils.Fixtures;
@@ -25,7 +28,7 @@ public class ArraysTest {
     int[] actual = target.insertPolePosition(polePosition, grid);
 
     // then
-    Assert.assertEquals(polePosition, actual[0]);
+    assertEquals(polePosition, actual[0]);
   }
 
   @Test
@@ -39,7 +42,7 @@ public class ArraysTest {
 
     // then
     int[] expected = {0, 1};
-    Assert.assertArrayEquals(expected, actual);
+    assertArrayEquals(expected, actual);
   }
 
   @Test
@@ -53,7 +56,7 @@ public class ArraysTest {
 
     // then
     int[] expected = {1, 2};
-    Assert.assertArrayEquals(expected, actual);
+    assertArrayEquals(expected, actual);
   }
 
   @Test
@@ -66,12 +69,9 @@ public class ArraysTest {
     List<List<Integer>> actual = target.threeSum(nums);
 
     // then
-    List<List<Integer>> expected = List.of(
-        List.of(-1, 1, 0),
-        List.of(-1, 2, -1)
-    );
+    List<List<Integer>> expected = List.of(List.of(-1, 1, 0), List.of(-1, 2, -1));
 
-    Assert.assertEquals(expected, actual);
+    assertEquals(expected, actual);
   }
 
   @Test
@@ -84,7 +84,64 @@ public class ArraysTest {
     int[] rotated = target.rotate(nums, k);
     int[] expected = {5, 6, 7, 1, 2, 3, 4};
 
-    Assert.assertArrayEquals(expected, rotated);
+    assertArrayEquals(expected, rotated);
   }
+
+  @Test
+  public void shouldCountMaxAreaWithWater() {
+    // given
+    int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+
+    // when
+    var actual = target.maxArea(height);
+
+    // then
+    assertEquals(49, actual);
+  }
+
+  @Test
+  public void shouldMergeAll() {
+    // given
+    int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+
+    // when
+    var actual = target.merge(intervals);
+
+    // then
+    var expected = new int[][]{{1, 6}, {8, 10}, {15, 18}};
+    assertArrayEquals(expected, actual);
+  }
+
+  @Test
+  public void shouldFindWeakestRowsOfSoldiers() {
+    // given
+    int[][] rows = {{1, 1, 0, 0, 0}, {1, 1, 1, 1, 0}, {1, 0, 0, 0, 0}, {1, 1, 0, 0, 0},
+        {1, 1, 1, 1, 1}};
+
+    int k = 3;
+
+    // when
+    var actual = target.kWeakestRows(rows, k);
+
+    // then
+    var expected = new int[]{2, 0, 3};
+    assertArrayEquals(expected, actual);
+  }
+
+  @Test
+  public void shouldFindNextGreater() {
+    // given
+    int[] nums1 = new int[]{4, 1, 2};
+    int[] nums2 = new int[]{1, 3, 4, 2};
+
+    // when
+    var actual = target.nextGreaterElement(nums1, nums2);
+
+    // then
+    var expected = new int[]{-1, 3, -1};
+    assertArrayEquals(expected, actual);
+  }
+
+
 
 }
