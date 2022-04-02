@@ -3,11 +3,17 @@ package com.rflpazini.playground;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
-public class UseCaseTest {
+public class ListsTest {
 
   private Lists target;
+
+  @Before
+  public void init() {
+    this.target = new Lists();
+  }
 
   @Test
   public void testGetSecondBiggestNumber() {
@@ -59,5 +65,18 @@ public class UseCaseTest {
 
     // then
     Assert.assertTrue(actual);
+  }
+
+  @Test
+  public void shouldFindBuildsWithOceanView() {
+    // given
+    int[] buildingsHeight = new int[]{4, 2, 3, 1};
+
+    // when
+    var actual = target.findBuildings(buildingsHeight);
+
+    // then
+    var expected = new int[]{0, 2, 3};
+    Assert.assertArrayEquals(expected, actual);
   }
 }

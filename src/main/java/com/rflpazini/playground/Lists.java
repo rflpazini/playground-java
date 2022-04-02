@@ -1,5 +1,6 @@
 package com.rflpazini.playground;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
@@ -49,5 +50,21 @@ public class Lists {
 
   public boolean checkListStream(final List<String> array) {
     return array.stream().anyMatch("TICO".toLowerCase()::contains);
+  }
+
+  public int[] findBuildings(int[] heights) {
+    int n = heights.length;
+    List<Integer> res = new ArrayList<>();
+
+    for (int i = 0; i < n; ++i) {
+      while (!res.isEmpty() && heights[res.get(res.size() - 1)] <= heights[i]) {
+        res.remove(res.size() - 1);
+      }
+      res.add(i);
+    }
+
+    return res.stream()
+        .mapToInt(Integer::intValue)
+        .toArray();
   }
 }
