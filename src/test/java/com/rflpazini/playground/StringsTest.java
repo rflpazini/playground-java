@@ -1,5 +1,6 @@
 package com.rflpazini.playground;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -89,4 +90,17 @@ public class StringsTest {
     assertFalse(actual);
   }
 
+  @Test
+  public void shouldFindLongestPrefix() {
+    // given
+    String[] strs = new String[]{"flower", "flow", "flight"};
+
+    // when
+    String actual = target.longestCommonPrefix(strs);
+    String actualNull = target.longestCommonPrefix(new String[]{});
+
+    // then
+    assertEquals("fl", actual);
+    assertEquals("", actualNull);
+  }
 }
