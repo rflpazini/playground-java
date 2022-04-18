@@ -142,6 +142,17 @@ public class ArraysTest {
     assertArrayEquals(expected, actual);
   }
 
+  @Test
+  public void shouldFindLastStoneWeight() {
+    // given
+    int[] stones = new int[]{2, 7, 4, 1, 8, 1};
+
+    // when
+    var actual = target.lastStoneWeight(stones);
+
+    // then
+    assertEquals(1, actual);
+  }
 
 
 }
