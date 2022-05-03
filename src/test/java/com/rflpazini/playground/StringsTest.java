@@ -103,4 +103,18 @@ public class StringsTest {
     assertEquals("fl", actual);
     assertEquals("", actualNull);
   }
+
+  @Test
+  public void shouldReverseString() {
+    // given
+    String str = "Rafael";
+    String str2 = "hello";
+    // when
+    String actual = target.reverse(str);
+    String actual2 = target.reverse(str2);
+
+    // then
+    assertEquals("leafaR", actual);
+    assertEquals("olleh", actual2);
+  }
 }

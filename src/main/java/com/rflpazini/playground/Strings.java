@@ -1,5 +1,6 @@
 package com.rflpazini.playground;
 
+import java.util.Arrays;
 import java.util.Hashtable;
 
 public class Strings {
@@ -71,6 +72,25 @@ public class Strings {
     }
 
     return ans;
+  }
+
+  public String reverse(String str) {
+    int left = 0, right = str.length() - 1;
+
+    char[] word = str.toCharArray();
+    while (left < right) {
+      swap(word, left++, right--);
+    }
+
+    return new String(word);
+  }
+
+  private char[] swap(char[] word, int l, int r) {
+    char temp = word[l];
+    word[l] = word[r];
+    word[r] = temp;
+
+    return word;
   }
 
 }
